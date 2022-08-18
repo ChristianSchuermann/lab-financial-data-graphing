@@ -1,0 +1,18 @@
+By default, this will return the previous 31 days' worth of data. 
+This endpoint accepts the following optional parameters:
+
+?index=[USD/CNY]The index to return data for. Defaults to USD.
+
+?currency=<VALUE>The currency to return the data in, specified in ISO 4217 format. Defaults to USD.
+
+?start=<VALUE>&end=<VALUE> Allows data to be returned for a specific date range. Must be listed as a pair of start and end parameters, with dates supplied in the YYYY-MM-DD format, e.g. 2013-09-01 for September 1st, 2013.
+
+?for=yesterdaySpecifying this will return a single value for the previous day. Overrides the start/end parameter.
+
+*******************************************
+
+Sample Request: https://api.coindesk.com/v1/bpi/historical/close.json?start=2013-09-01&end=2013-09-05
+
+{"bpi":{"2013-09-01":128.2597,"2013-09-02":127.3648,"2013-09-03":127.5915,"2013-09-04":120.5738,"2013-09-05":120.5333},
+"disclaimer":"This data was produced from the CoinDesk Bitcoin Price Index. BPI value data returned as USD.",
+"time":{"updated":"Sep 6, 2013 00:03:00 UTC","updatedISO":"2013-09-06T00:03:00+00:00"}}
